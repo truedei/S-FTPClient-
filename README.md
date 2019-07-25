@@ -20,7 +20,6 @@ S-FTPClient(Swing,Java,Socket,FTP,加密算法)
 
 ![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE1.png)
 
-图1
 
 当用户启动一次与远程主机的 FTP会话时，FTP首先建立一个 TCP连接到 FTP服务器的 21号端口。FTP的客户端则通过该连接发送用户标识和密码等，客户端还可以通过该连接发送命令以改变远程系统的当前工作目录。当用户要求传送文件时，FTP服务器则在其 20号端口上建立一个数据连接，FTP在该连接上传送完毕一个文件后会立即断开该连接。如果再一次 FTP会话过程中需要传送另一个文件，FTP服务器则会建立另一个连接。在整个 FTP会话过程中，控制连接是始终保持的，而数据连接则会随着文件的传输不断的打开和关闭。
 综上所述需要根据FTP的控制连接和数据连接这整个流程完成对FTP的操作。
@@ -30,7 +29,8 @@ S-FTPClient(Swing,Java,Socket,FTP,加密算法)
 
 经过需求分析后，决定此FTP客户端分本地文件加载系统模块、连接数据模块、断开连接模块、下载模块、刷新模块、删除模块等几项关键的模块。本程序的系统结构图如下：
 
-图2
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE2.png)
+
 
 FTP客户端结构图
 
@@ -38,7 +38,9 @@ FTP客户端结构图
 	本地文件系统加载模块：
 当页面初始化的时候用来加载本地文件系统的，可以让用户更为直观的，方便的，快捷的选择本地相应的文件进行浏览、上传等操作。本地文件系统加载模块如图所示：
 
-图3
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE3.png)
+
 
 本地文件系统加载模块
 
@@ -47,7 +49,9 @@ FTP客户端结构图
 
 连接模块是在图形界面下用户交互与FTP服务器建立连接的一个核心的模块功能。可以使用规定好的IP地址进行连接，IP无论是外网还是内网都可以进行连接。支持不同端口的FTP服务器进行连接，这个设计是为了方便不同端口的FTP。支持匿名用户和FTP普通用户登录客户端。全称由用户决定，随时可以输入的。连接模块如图所示：
 
-图4
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE4.png)
+
 
 连接模块
 
@@ -58,7 +62,9 @@ FTP客户端结构图
 	下载模块：
 下载模块是为用户下载FTP服务器的文件而设计的。当用户想要下载的时候，必须要选择上想要下载的文件。不然是不能下载的，界面设计如下：
 
-图5
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE5.png)
+
 
 下载模块
 
@@ -74,26 +80,31 @@ FTP客户端结构图
 上传文件流程图：
 
 
-图6
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE6.png)
+
 
 下载数据流程图：
 
-图7
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE7.png)
+
 
 加密流程：
 
-图8
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE8.png)
+
 
 解密过程：
 
-图9
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE9.png)
+
 
 ##测试数据
 
 1、测试环境
   使用IIS搭建的本地的FTP服务器。
   
-  图10
+  ![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE10.png)
+
   
 2、测试数据
   第一种：
@@ -109,38 +120,48 @@ FTP客户端结构图
 
 第一种情况：
 
-图11
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE11.png)
+
 
 选择文件上传
 
-图12
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE12.png)
 
-图13
 
-图14
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE13.png)
 
-图15
 
-图16
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE14.png)
+
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE15.png)
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE16.png)
+
+
 
 
 下载：
 
-图17
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE17.png)
 
 下载到特定位置：
 
-图18
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE18.png)
 
 下载后的文件：
-图19
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE19.png)
 
 选择一个进行删除
-图20
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE20.png)
 
 删除后会立马刷新列表
 
-图21
+
+![image](https://github.com/8042965/S-FTPClient-/blob/master/images/%E5%9B%BE21.png)
 
 
 
